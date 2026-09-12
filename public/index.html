@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Global Loading Indicator Overlay -->
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="spinner"></div>
+    <p>Processing Request...</p>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <h1>Employee Information</h1>
+      <button id="addBtn" class="btn btn-primary">+ Add New Employee</button>
+    </header>
+
+    <!-- Employees Table -->
+    <div class="table-container">
+      <table id="employeeTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Rows injected dynamically via JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Add / Edit Modal -->
+  <div id="employeeModal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle">Add Employee</h2>
+      <form id="employeeForm">
+        <input type="hidden" id="empId" />
+
+        <div class="form-group">
+          <label for="empName">Name</label>
+          <input type="text" id="empName" required />
+        </div>
+
+        <div class="form-group">
+          <label for="empAge">Age</label>
+          <input type="number" id="empAge" required />
+        </div>
+
+        <div class="form-group">
+          <label for="empMobile">Mobile</label>
+          <input type="text" id="empMobile" required />
+        </div>
+
+        <div class="form-group">
+          <label for="empCity">City</label>
+          <input type="text" id="empCity" required />
+        </div>
+
+        <div class="form-group">
+          <label for="empDepartment">Department</label>
+          <input type="text" id="empDepartment" required />
+        </div>
+
+        <div class="form-group">
+          <label for="empSalary">Salary</label>
+          <input type="number" id="empSalary" required />
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="closeModalBtn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Compensation Modal -->
+  <div id="compModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Employee Compensation</h2>
+      <div id="compDetails" class="comp-details"></div>
+      <div class="modal-actions">
+        <button id="closeCompModalBtn" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
